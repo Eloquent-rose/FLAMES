@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import messagebox as mb
-from functools import partial  
 # ---------------------------------------------------- FLames Implementation -------------------------------------------------------------
 
 name_1 = []
@@ -12,7 +11,6 @@ flag = True
 
 def Editing():
 
-    # mb.showerror("Error", "Hello")
     name1 = str(entry1.get())
     name1 = name1.lower()
     name1 = name1.replace(" ", "")
@@ -23,13 +21,11 @@ def Editing():
 
     if(name1.isalpha() == False or name2.isalpha() == False):
         Str = "The Entered name contains invalid characters. \nEnter the string again"
-        # Result.config(text = "%s" %Str) 
         mb.showerror("Error",Str)
         return 
 
     if name1 == name2:
         Str = "Same names have been entered"
-        # Result.config(text = "%s" %Str)
         mb.showerror("Error",Str) 
         return 
     
@@ -62,10 +58,6 @@ def cancel_comman_letters(name1, name2):
                 name_1[i] = '$'
                 name_2[j] = '$'
 
-        # print (name_1)
-        # print (name_2)
-        # return name_1, name_2
-
 # ------------------------------------------- Count the remaining letters left in the names ----------------------------------------------
 
 def letter_count():
@@ -81,12 +73,10 @@ def letter_count():
         if name_2[j] != '$':
             count = count + 1
 
-    # print (count)
-
 # ---------------------------------------------------- Finding the answer in FLAMES ------------------------------------------------------
 
 def flames():
-    print("Performing Flames...")
+    # print("Performing Flames...")
     global count
     nc = count
     flames = ['f', 'l', 'a', 'm', 'e', 's']
@@ -123,33 +113,27 @@ def flames():
             i = 0
 
         if len(flames) == 1:
+            
             if flames[0] == 'f':
-                # print("They are FRIENDs")
                 mb.showinfo("Result", "They are FRIENDs")
-            if flames[0] == 'l':
-                # print("They are LOVEd by each other")
+                
+            elif flames[0] == 'l':
                 mb.showinfo("Result", "They are LOVEd by each other")
-            if flames[0] == 'a':
-                # print("One has AFFECTION towards the other")
+                
+            elif flames[0] == 'a':
                 mb.showinfo("Result", "One has AFFECTION towards the other")
-            if flames[0] == 'm':
+                
+            elif flames[0] == 'm':
                 mb.showinfo("Result","They will marry each other")
-            if flames[0] == 'e':
+                
+            elif flames[0] == 'e':
                 mb.showinfo("Result","They are ENEMIES")
-            if flames[0] == 's':
+                
+            else:
                 mb.showinfo("Result","SISTER!!!!")
             
             flag_check = False
                     
-
-
-# --------------------------------------------------------- Function Calls --------------------------------------------------------------
-
-
-# cancel_comman_letters(name1, name2)
-# letter_count(name1, name2)
-# flames(name1, name2)
-
 # ---------------------------------------------------------------- GUI -------------------------------------------------------------------
 
 GUI = tk.Tk()
